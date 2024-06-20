@@ -19,5 +19,8 @@
     "swiper": "^11.1.4",
     "tailwindcss": "3.4.4",
     "typescript": "5.4.5"
+  },
+  "devDependencies": {
+    "just-pnpm": "^1.0.2"
   }
 }
