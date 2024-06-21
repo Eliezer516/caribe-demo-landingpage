@@ -1,25 +1,14 @@
-<div class="button-up transition-transform transform hover:scale-105" id="myBtn">
-    <a href="#hero"><img src="../../public/flecha-arriba.png" alt="" /></a>
+<div class="button-up bg-[#0f928c] transition-opacity fixed bottom-10 right-10 w-14 h-14 rounded-full cursor-pointer z-10 grid place-items-center" id="myBtn">
+    <img src="/flecha-arriba.png" alt="" />
 </div>
+
 <style>
     .button-up {
-        position: fixed;
-        bottom: 100px;
-        right: 30px;
-        z-index: 99;
+        @apply hidden opacity-0
     }
-    .button-up a {
-        width: 70px;
-        height: 70px;
-        background-color: #0f928c;
-        display: inline-flex;
-        border-radius: 50%;
-        margin-right: 6px;
-        align-items: center;
-        justify-content: center;
-        line-height: 1;
-        border: 1px solid #006465;
-        color: white;
+
+    .button-up.active {
+        @apply grid opacity-100
     }
 </style>
 
@@ -27,15 +16,7 @@
     const mybutton = document.getElementById("myBtn");
 
     const scrollFunction = () => {
-        
-        if (
-            document.body.scrollTop > 50 ||
-            document.documentElement.scrollTop > 50
-        ) {
-            mybutton.classList.remove("hidden");
-        } else {
-            mybutton.classList.add("hidden");
-        }
+        mybutton.classList.toggle('active', window.scrollY > 500)
     };
     const backToTop = () => {
         window.scrollTo({ top: 0, behavior: "smooth" });
